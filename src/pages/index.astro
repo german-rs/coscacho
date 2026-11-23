@@ -1,11 +1,187 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// Ajusta estos dos valores antes de publicar
+const formspreeUrl = "https://formspree.io/f/TU_ID_DE_FORMSPREE";
+const correo = "contacto@coscacho.cl";
 ---
 
-<Layout>
-	<Welcome />
+<Layout
+  title="Coscacho Ediciones | Clásicos contemplativos en español"
+  description="Sello digital chileno de clásicos contemplativos en español claro y con notas. Primer título: Dhammapada, el sendero del Dharma."
+>
+  <header class="mx-auto flex max-w-5xl items-baseline justify-between px-6 pt-8">
+    <a href="/" class="font-marca text-2xl text-tinta">Coscacho</a>
+    <nav aria-label="Principal" class="flex gap-6 text-base text-umbra">
+      <a href="#primer-titulo" class="underline-offset-4 hover:underline">Primer título</a>
+      <a href="#el-sello" class="underline-offset-4 hover:underline">El sello</a>
+      <a href="#contacto" class="underline-offset-4 hover:underline">Contacto</a>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <section class="mx-auto max-w-5xl px-6 pb-32 pt-28 sm:pt-40">
+      <h1 class="max-w-3xl text-5xl leading-tight sm:text-7xl sm:leading-[1.1]">
+        Clásicos para leer despacio.
+      </h1>
+      <p class="mt-10 max-w-xl text-xl text-umbra">
+        Textos de la tradición contemplativa, en español claro y con notas para quien parte de cero.
+      </p>
+      <a
+        href="#avisame"
+        class="mt-12 inline-block bg-oliva px-7 py-4 text-lg text-papel hover:bg-umbra"
+      >
+        Quiero que me avisen del primer lanzamiento
+      </a>
+    </section>
+
+    <section id="primer-titulo" class="bg-arena py-28">
+      <div class="mx-auto grid max-w-5xl gap-14 px-6 md:grid-cols-[minmax(0,18rem)_1fr] md:gap-20">
+        <!-- Reemplaza este bloque por la portada: <img src="/portada-dhammapada.jpg" alt="Portada de Dhammapada. El sendero del Dharma" width="600" height="900" /> -->
+        <div
+          class="flex aspect-[2/3] items-center justify-center bg-papel p-6 text-center text-umbra"
+          role="img"
+          aria-label="Espacio reservado para la portada del Dhammapada"
+        >
+          Portada
+        </div>
+        <div class="max-w-xl">
+          <p class="text-umbra">Próximamente</p>
+          <h2 class="mt-2 text-4xl leading-tight">Dhammapada. El sendero del Dharma</h2>
+          <p class="mt-8">
+            Uno de los textos más leídos de la tradición budista: versos breves, atribuidos al Buda,
+            sobre la mente, la atención y la manera de vivir.
+          </p>
+          <p class="mt-5">
+            Esta edición está pensada para quien lo lee por primera vez. Incluye una introducción
+            sobre el Buda y su época, notas breves que explican las palabras difíciles y un glosario.
+          </p>
+          <ul class="mt-8 space-y-1 text-umbra">
+            <li>Traducción y notas de Coscacho Ediciones</li>
+            <li>A partir de la versión inglesa de F. Max Müller (1881)</li>
+            <li>Libro digital (EPUB)</li>
+          </ul>
+          <a href="#avisame" class="mt-10 inline-block text-lg underline underline-offset-4">
+            Avísame cuando esté disponible
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-5xl px-6 py-28">
+      <h2 class="text-3xl">Por qué esta edición</h2>
+      <div class="mt-12 grid gap-12 md:grid-cols-3">
+        <div>
+          <h3 class="text-xl">Español claro</h3>
+          <p class="mt-3 text-umbra">Sin giros rebuscados. Los versos se leen como se hablan.</p>
+        </div>
+        <div>
+          <h3 class="text-xl">Notas que responden primero</h3>
+          <p class="mt-3 text-umbra">
+            Cada nota parte por lo que el lector se pregunta: qué significa y por qué se tradujo así.
+            El detalle técnico viene después.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl">Para quien parte de cero</h3>
+          <p class="mt-3 text-umbra">
+            No necesitas saber de budismo. La introducción te da el contexto antes de los versos.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="el-sello" class="bg-arena py-28">
+      <div class="mx-auto max-w-5xl px-6">
+        <div class="max-w-2xl">
+          <h2 class="text-3xl">Sobre Coscacho Ediciones</h2>
+          <p class="mt-8">
+            Coscacho Ediciones es un sello digital independiente, hecho en Chile. Publica textos
+            clásicos de la tradición contemplativa en traducciones claras y anotadas.
+          </p>
+          <p class="mt-5">
+            Cada edición se trabaja con calma: se traduce, se revisa, se anota y se cuida su forma,
+            pensando siempre en quien lee.
+          </p>
+          <p class="mt-5">
+            En Chile, un coscacho es un golpecito con los nudillos en la cabeza. Sirve para
+            despertar, y esa es la idea del sello: textos que invitan a prestar atención. Además,
+            «Coscacho» es el apodo del padre del editor, y el sello lleva su nombre.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="avisame" class="mx-auto max-w-5xl px-6 py-28">
+      <div class="max-w-xl">
+        <h2 class="text-3xl">Entérate del primer lanzamiento</h2>
+        <p class="mt-6">
+          Deja tu correo y te avisamos cuando el Dhammapada esté disponible. Solo escribiremos para
+          contarte de nuevas ediciones.
+        </p>
+        <form id="form-correo" action={formspreeUrl} method="POST" class="mt-8">
+          <label for="correo" class="block text-lg">Tu correo</label>
+          <input
+            id="correo"
+            name="email"
+            type="email"
+            required
+            autocomplete="email"
+            class="mt-2 w-full border border-umbra bg-papel px-4 py-3 text-lg"
+          />
+          <!-- Campo trampa contra spam: debe quedar vacío -->
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hidden" />
+          <button type="submit" class="mt-5 bg-oliva px-7 py-4 text-lg text-papel hover:bg-umbra">
+            Quiero que me avisen
+          </button>
+          <p class="mt-4 text-base text-umbra">
+            Usaremos tu correo solo para avisarte de lanzamientos. Puedes darte de baja cuando
+            quieras.
+          </p>
+        </form>
+        <p id="estado-form" role="status" class="mt-5 text-lg"></p>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-5xl px-6 pb-28">
+      <p class="max-w-xl text-umbra">
+        ¿Tienes un libro que quieres llevar a las tiendas de libros digitales? Estamos preparando un
+        servicio de producción de ebooks para autores. Si te interesa, escríbenos a &nbsp;
+        <a href={`mailto:${correo}`} class="underline underline-offset-4">{correo}</a> y conversamos.
+      </p>
+    </section>
+  </main>
+
+  <footer id="contacto" class="bg-tinta py-12 text-papel">
+    <div class="mx-auto flex max-w-5xl flex-wrap items-baseline justify-between gap-4 px-6">
+      <p><span class="font-marca text-xl">Coscacho</span> &copy; 2026 Coscacho Ediciones</p>
+      <a href={`mailto:${correo}`} class="underline underline-offset-4">{correo}</a>
+    </div>
+  </footer>
+
+  <script>
+    const form = document.getElementById("form-correo") as HTMLFormElement | null;
+    const estado = document.getElementById("estado-form");
+
+    form?.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      if (!estado) return;
+      estado.textContent = "Enviando...";
+      try {
+        const res = await fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+          headers: { Accept: "application/json" },
+        });
+        if (res.ok) {
+          form.reset();
+          estado.textContent = "Gracias. Te escribiremos cuando haya novedades.";
+        } else {
+          estado.textContent = "No pudimos guardar tu correo. Revisa que esté bien escrito e inténtalo de nuevo.";
+        }
+      } catch {
+        estado.textContent = "No hubo conexión. Inténtalo de nuevo en unos minutos.";
+      }
+    });
+  </script>
 </Layout>

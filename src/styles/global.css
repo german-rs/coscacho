@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+/* Tokens: cambia los colores aquí y se actualiza toda la página */
+@theme {
+  --color-papel: #efe8da;
+  --color-arena: #ddd2bd;
+  --color-tinta: #2a2420;
+  --color-umbra: #5b4331;
+  --color-oliva: #5f6140;
+  --font-marca: "Ultra", Georgia, serif;
+  --font-texto: Georgia, "Times New Roman", serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-papel);
+  color: var(--color-tinta);
+  font-family: var(--font-texto);
+  line-height: 1.75;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-oliva);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
