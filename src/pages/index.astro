@@ -1,9 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
-
-// Ajusta estos dos valores antes de publicar
-const formspreeUrl = "https://formspree.io/f/TU_ID_DE_FORMSPREE";
+const formspreeUrl = "https://formspree.io/f/xnpdoboo";
 const correo = "contacto@coscacho.cl";
+import { Image } from "astro:assets";
+import portada from "../assets/imgs/portada-dhammapada.jpg";
 ---
 
 <Layout
@@ -37,14 +37,13 @@ const correo = "contacto@coscacho.cl";
 
     <section id="primer-titulo" class="bg-arena py-28">
       <div class="mx-auto grid max-w-5xl gap-14 px-6 md:grid-cols-[minmax(0,18rem)_1fr] md:gap-20">
-        <!-- Reemplaza este bloque por la portada: <img src="/portada-dhammapada.jpg" alt="Portada de Dhammapada. El sendero del Dharma" width="600" height="900" /> -->
-        <div
-          class="flex aspect-[2/3] items-center justify-center bg-papel p-6 text-center text-umbra"
-          role="img"
-          aria-label="Espacio reservado para la portada del Dhammapada"
-        >
-          Portada
-        </div>
+        <Image
+          src={portada}
+          alt="Portada de Dhammapada. El sendero del Dharma"
+          widths={[288, 576]}
+          sizes="(min-width: 768px) 288px, 80vw"
+          class="h-auto w-full"
+        />
         <div class="max-w-xl">
           <p class="text-umbra">Próximamente</p>
           <h2 class="mt-2 text-4xl leading-tight">Dhammapada. El sendero del Dharma</h2>
@@ -129,7 +128,7 @@ const correo = "contacto@coscacho.cl";
             autocomplete="email"
             class="mt-2 w-full border border-umbra bg-papel px-4 py-3 text-lg"
           />
-          <!-- Campo trampa contra spam: debe quedar vacío -->
+         
           <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hidden" />
           <button type="submit" class="mt-5 bg-oliva px-7 py-4 text-lg text-papel hover:bg-umbra">
             Quiero que me avisen
